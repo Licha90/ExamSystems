@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class TestMain {
-    public static void main(String[] args) {
+    public static void main(String[] args) {//
         //创建考试机器
         ExamMachine machine = new ExamMachine();//调用构造方法时 有一个块默认执行
         //创建学生对象 类考试
