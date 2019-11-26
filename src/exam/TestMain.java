@@ -9,12 +9,15 @@ public class TestMain {
         ExamMachine machine = new ExamMachine();//调用构造方法时 有一个块默认执行
         //创建学生对象 类考试
         Scanner input = new Scanner(System.in);
+        //输入用户名
         System.out.println("请输入用户名：");
         String username = input.nextLine();
+        //输入密码
         System.out.println("请输入密码：");
         String password = input.nextLine();
         Student student = new Student(username,password);
         String result = machine.login(student.getUserName(),student.getPassword());
+        //如果登录成功 就开始抽题 不成功就算了
         if (result.equals("登录成功")){
             System.out.println("登录成功\n" + student.getUserName() + "开始考试了 加油");
             ArrayList<Question> paper = machine.getPaper();//考试机随机抽取一张试卷

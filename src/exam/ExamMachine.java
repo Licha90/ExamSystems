@@ -8,7 +8,7 @@ import java.util.HashSet;
 import java.util.Random;
 
 public class ExamMachine {
-    //属性--记录学生用户名和密码
+    //属性--记录学生用户名和密码 HashMap
     private HashMap<String, String> userBox = new HashMap<String,String>();
     {
         userBox.put("小明","123");
@@ -53,10 +53,11 @@ public class ExamMachine {
         Question question = questionBank.get(index);
         paper.add(question);
         }
-        return new ArrayList<Question>(paper);//构造方法的来回使用 构建 Set 和 List 都在Collection类中
+        return new ArrayList<Question>(paper);
+        //构造方法的来回使用 构建 Set 和 List 都在Collection类中
     }
 
-    //考试机器中还有一个登录方法
+    //考试机器中还有一个登录方法  HashMap 比较key就等于比较value了
     public String login(String username, String password){
         String realPassword = this.userBox.get(username);
         if (realPassword != null && realPassword.equals(password)){
